@@ -5,6 +5,8 @@ import sys
 from math import radians, cos, sin, asin, sqrt
 from datetime import datetime
 
+ET.register_namespace('', 'http://www.topografix.com/GPX/1/1')
+
 def haversine(lon1, lat1, lon2, lat2):
 	"""
 	Calculate the great circle distance between two points 
