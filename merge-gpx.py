@@ -69,6 +69,16 @@ print 'The closest point is', minimumPoint.attrib['lat'], minimumPoint.attrib['l
 # Get trkseg from 1
 trkseg = tree1.find('*//{0}trkseg'.format(namespace))
 
+# Create waypoint which marks last original point
+wpt = ET.Element('wpt')
+wpt.set('lat', lastPoint.attrib['lat'])
+wpt.set('lon', lastPoint.attrib['lon'])
+wptname = ET.Element('name')
+wptname.text = 'LOP'
+wpt.append(wptname)
+tree1.getroot().append(wpt)
+trkseg.append(ET.Comment(text = 'Original track ends here'))
+
 # Change datetime from closest point 1 on and append updated point to tree1
 timeLastPoint = GpxToTime(lastPoint)
 timeClosestPoint = GpxToTime(minimumPoint)
