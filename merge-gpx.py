@@ -41,8 +41,7 @@ file3 = sys.argv[3]
 
 tree1 = ET.parse(file1)
 tree2 = ET.parse(file2)
-# namespace="{http://www.topografix.com/GPX/1/1}"
-register_namespace('http://www.topografix.com/GPX/1/1')
+namespace="{http://www.topografix.com/GPX/1/1}"
 
 trkpts1 = tree1.findall('*//{0}trkpt'.format(namespace))
 trkpts2 = tree2.findall('*//{0}trkpt'.format(namespace))
