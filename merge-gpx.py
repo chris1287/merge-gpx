@@ -74,7 +74,7 @@ wpt = ET.Element('wpt')
 wpt.set('lat', lastPoint.attrib['lat'])
 wpt.set('lon', lastPoint.attrib['lon'])
 wptname = ET.Element('name')
-wptname.text = 'LOP'
+wptname.text = 'OriginalTrack'
 wpt.append(wptname)
 tree1.getroot().append(wpt)
 trkseg.append(ET.Comment(text = 'Original track ends here'))
